@@ -13,7 +13,19 @@ A random note picker that displays quotes, facts, and interesting notes randomly
 - `utils.py` - Helper functions for random selection
 - `data.txt` - Database of quotes, facts, and notes
 
+## Requirements
+- Python 3.x
+- No external libraries needed
+
 ## Usage
 ```bash
 python main.py
 ```
+
+## Setup
+
+Make sure data.txt exists in the same directory with one note per line.
+
+## Author
+
+Narendra Kumar
