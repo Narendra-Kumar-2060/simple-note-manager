@@ -9,7 +9,7 @@ A random note picker that displays quotes, facts, and interesting notes randomly
 - Simple and easy to use
 
 ## Files
-- `main.py` - Main application entry point
+- `main.py`  - Main application entry point
 - `utils.py` - Helper functions for random selection
 - `data.txt` - Database of quotes, facts, and notes
 
@@ -23,9 +23,7 @@ python main.py
 ```
 
 ## Setup
-
 Make sure data.txt exists in the same directory with one note per line.
 
 ## Author
-
 Narendra Kumar

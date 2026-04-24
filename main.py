@@ -15,7 +15,7 @@ def display_help():
 
 
 def main():
-    note_path = "data.txt"
+    note_path = "notes.txt"
     notes, note_count = utils.read_notes(note_path)
 
     print("Welcome to the Note Manager!")
