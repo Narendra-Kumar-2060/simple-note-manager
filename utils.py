@@ -2,15 +2,9 @@ import random
 
 
 def read_notes(file_path):
-    f = open(file_path, "r", encoding="utf-8")
-    try:
-        lines = f.readlines()
-        notes = []
-        for line in lines:
-            notes.append(line.rstrip("\n"))
+    with open(file_path, "r", encoding="utf-8") as f:
+        notes = [line.rstrip("\n") for line in f.readlines()]
         return notes, len(notes)
-    finally:
-        f.close()
 
 
 def write_note(file_path, user_note):
@@ -18,12 +12,9 @@ def write_note(file_path, user_note):
         print("Error: Cannot add an empty note.")
         return False
 
-    f = open(file_path, "a", encoding="utf-8")
-    try:
+    with open(file_path, "a", encoding="utf-8") as f:
         f.write("\n" + user_note.strip())
-        return True
-    finally:
-        f.close()
+    return True
 
 
 def pick_random_note(notes_list):
@@ -38,17 +29,14 @@ def list_notes(notes_list):
     if not notes_list:
         print("No notes available.")
         return
-    
+
     for i, note in enumerate(notes_list, 1):
         print(f"{i}. {note}")
 
 
 def delete_note(file_path, note_index):
-    f = open(file_path, "r", encoding="utf-8")
-    try:
+    with open(file_path, "r", encoding="utf-8") as f:
         notes = f.readlines()
-    finally:
-        f.close()
 
     if note_index < 1 or note_index > len(notes):
         print(f"Error: Note index {note_index} is out of range (1-{len(notes)})")
@@ -56,10 +44,8 @@ def delete_note(file_path, note_index):
 
     deleted_note = notes.pop(note_index - 1).strip()
 
-    f = open(file_path, "w", encoding="utf-8")
-    try:
+    with open(file_path, "w", encoding="utf-8") as f:
         f.writelines(notes)
-        print(f"Deleted note: {deleted_note}")
-        return True
-    finally:
-        f.close()
+
+    print(f"Deleted note: {deleted_note}")
+    return True
