@@ -21,7 +21,7 @@ A command-line note management application that lets you store, retrieve, and ma
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/note-manager.git
+git clone https://github.com/Narendra-Kumar-2060/simple-note-manager.git
 cd note-manager
 
 # Run the application
